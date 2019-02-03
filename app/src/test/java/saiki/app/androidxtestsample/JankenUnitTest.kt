@@ -1,5 +1,8 @@
 package saiki.app.androidxtestsample
 
+import org.junit.Assert.assertEquals
+import org.junit.Test
+
 class JankenUnitTest {
 
 //    @Test
