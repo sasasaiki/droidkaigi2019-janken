@@ -1,25 +1,16 @@
 package saiki.app.androidxtestsample
 
-import saiki.app.androidxtestsample.Hand.*
-import saiki.app.androidxtestsample.RESULT.*
-
 class Janken {
-    fun pon(p1: Hand, p2: Hand) : RESULT {
-        if (p1 == GUU && p2 == PAR){
-            return P2
+    fun start(p1: String, p2: String): Result {
+        if (p1 == "guu" && p2 == "paa"){
+            return Result.P2_WIN
         }
-        return P1
+        return Result.P1_WIN
+    }
+
+    enum class Result {
+        P1_WIN,
+        P2_WIN
     }
 }
 
-enum class Hand{
-    GUU,
-    CHOKI,
-    PAR
-}
-
-enum class RESULT{
-    P1,
-    P2,
-    AIKO
-}

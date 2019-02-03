@@ -1,35 +1,32 @@
 package saiki.app.androidxtestsample
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
-import saiki.app.androidxtestsample.Hand.*
-import saiki.app.androidxtestsample.RESULT.*
+import saiki.app.androidxtestsample.Janken.Result.P1_WIN
+import saiki.app.androidxtestsample.Janken.Result.P2_WIN
 
 class JankenUnitTest {
-
-    val subject = Janken()
-
+    private val subject = Janken()
 
     @Test
     fun janken_グー対チョキなら1pが勝つ() {
-        val winner = subject.pon(GUU, CHOKI)
+        val result = subject.start("guu","choki")
 
-        assertEquals(P1, winner)
+        assertEquals(P1_WIN,result)
     }
 
     @Test
     fun janken_チョキ対パーなら1pが勝つ() {
-        val winner = subject.pon(CHOKI, PAR)
+        val result = subject.start("choki","paa")
 
-        assertEquals(P1, winner)
+        assertEquals(P1_WIN,result)
     }
 
     @Test
     fun janken_グー対パーなら2pが勝つ() {
-        val winner = subject.pon(GUU, PAR)
+        val result = subject.start("guu","paa")
 
-        assertEquals(P2, winner)
+        assertEquals(P2_WIN,result)
     }
 
 
